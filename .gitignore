@@ -1,0 +1,31 @@
+# IntelliJ
+.idea/
+*.iml
+out/
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+logs/
+**/logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java
+*.class
+*.swp
+
+# Docker
+**/.dockerignore
+.docker/
+tmp/
+**/tmp/
+
+# Env
+.env
+.env.*
