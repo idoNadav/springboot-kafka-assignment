@@ -67,8 +67,8 @@ curl --location 'http://localhost:8080/orders' \
 ## Option 1 – Run with Docker Compose:
 
 1. From the project root (where `docker-compose.yml` is located):
-   ```bash
-   docker compose up --build
+   - mvn -DskipTests clean package
+   - docker compose up --build
    
    
 ##Option 2 – Run locally with Maven:
