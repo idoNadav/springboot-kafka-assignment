@@ -68,6 +68,7 @@ curl --location 'http://localhost:8080/orders' \
 
 1. From the project root (where `docker-compose.yml` is located):
    ```bash
+   mvn -DskipTests clean package
    docker compose up --build
    
    
