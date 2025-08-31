@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   zookeeper:
     image: bitnami/zookeeper:3.9
@@ -27,7 +25,9 @@ services:
       - "6379:6379"
 
   order-service:
-    build: ./order-service
+    build:
+      context: .
+      dockerfile: order-service/Dockerfile
     environment:
       - SERVER_PORT=8080
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
@@ -42,7 +42,9 @@ services:
       - redis
 
   inventory-service:
-    build: ./inventory-service
+    build:
+      context: .
+      dockerfile: inventory-service/Dockerfile
     environment:
       - SERVER_PORT=8081
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
@@ -54,7 +56,9 @@ services:
       - kafka
 
   notification-service:
-    build: ./notification-service
+    build:
+      context: .
+      dockerfile: notification-service/Dockerfile
     environment:
       - SERVER_PORT=8082
       - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
